@@ -1,0 +1,3 @@
+include:
+  - "https://cicd.qutoutiao.net/gitlab-ci/base/.gitlab-ci.yml"
+  - "https://cicd.qutoutiao.net/gitlab-ci/repos/8348.gitlab-ci.yml"

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package proxy;
+
+option java_package = "net.qutoutiao.nec.proxy";
+
+
+enum Error {
+    OK = 0;
+    RATELIMIT = 1001;
+    SIZE_TOO_LARGE = 1002;
+}
+
+message Request {
+    string cmd  = 1;
+    repeated bytes args = 2;
+}
+
+message Response {
+    Error   errno = 1;
+    string  message = 2;
+}
+
+service Proxy {
+    rpc Do(Request) returns (Response) {}
+}
